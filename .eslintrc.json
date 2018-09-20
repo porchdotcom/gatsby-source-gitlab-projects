@@ -2,6 +2,9 @@
     "extends" : [
         "@porch/porch"
     ],
+    "globals": {
+        "Promise": true
+    },
     "rules": {
         "import/no-commonjs": 0
     }
