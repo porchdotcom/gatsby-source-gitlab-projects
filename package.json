@@ -8,6 +8,7 @@
   },
   "author": "Alex Hogue <alexhogue@porch.com>",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint ."
   },
