@@ -1,6 +1,6 @@
 {
   "name": "@porch/gatsby-source-gitlab-projects",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gatsby source plugin for getting all project metadata from Gitlab",
   "repository": {
     "type": "git",
