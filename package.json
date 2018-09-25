@@ -4,7 +4,7 @@
   "description": "Gatsby source plugin for getting all project metadata from Gitlab",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/porchdotcom/gatsby-source-newrelic-apps"
+    "url": "git+https://github.com/porchdotcom/gatsby-source-gitlab-projects"
   },
   "author": "Alex Hogue <alexhogue@porch.com>",
   "license": "MIT",
@@ -13,9 +13,9 @@
     "lint": "eslint ."
   },
   "bugs": {
-    "url": "https://github.com/porchdotcom/gatsby-source-newrelic-apps/issues"
+    "url": "https://github.com/porchdotcom/gatsby-source-gitlab-projects/issues"
   },
-  "homepage": "https://github.com/porchdotcom/gatsby-source-newrelic-apps#README",
+  "homepage": "https://github.com/porchdotcom/gatsby-source-gitlab-projects#README",
   "dependencies": {
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
