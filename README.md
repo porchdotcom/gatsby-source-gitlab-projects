@@ -1,13 +1,13 @@
 # gatsby-source-gitlab-projects
-A gatsby plugin for fetching project data for all project in Gitlab 
+A gatsby plugin for fetching project data for all project in Gitlab
 
-## Usage 
+## Usage
 ```
 npm install @porch/gatsby-source-gitlab-projects
 ```
 
 Add the following to your gatsby-config
-```js 
+```js
  plugins: [
     {
       resolve: '@porch/gatsby-source-gitlab-projects',
@@ -16,7 +16,10 @@ Add the following to your gatsby-config
           domain: 'your-gitlab-domain',
           privateToken: 'your-private-token',
         },
-        includeReadme: true
+        includeReadme: true,
+        searchParams: {
+            // See https://docs.gitlab.com/ee/api/projects.html#list-all-projects
+        }
       }
     }
 ]

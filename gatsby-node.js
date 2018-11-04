@@ -4,7 +4,7 @@ var path = require('path');
 var request = require('request-promise');
 
 const PROJECTS_PER_PAGE = 100; // gitlab max
-const getProjectRequest = (domain, privateToken) => (page, resolveWithFullResponse) => (
+const getProjectRequest = (domain, privateToken, searchParams) => (page, resolveWithFullResponse) => (
     request.get(
         `${domain}/api/v4/projects`, {
             headers: {
@@ -14,19 +14,31 @@ const getProjectRequest = (domain, privateToken) => (page, resolveWithFullRespon
                 archived: false,
                 simple: false,
                 page,
-                'per_page': PROJECTS_PER_PAGE
+                'per_page': PROJECTS_PER_PAGE,
+                ...searchParams
             },
             json: true,
             resolveWithFullResponse
         })
 );
 
-exports.sourceNodes = async ({ boundActionCreators: { createNode }, createNodeId },
-    { gitlab: { domain, privateToken } = {}, includeReadme = false } ) => {
+exports.sourceNodes = async ({
+    boundActionCreators: {
+        createNode
+    },
+    createNodeId
+}, {
+        gitlab: {
+            domain,
+            privateToken
+        } = {},
+        includeReadme = false,
+        searchParams = {}
+    }) => {
     assert(domain, 'options.gitlab.domain object required');
     assert(privateToken, 'options.gitlab.privateToken object required');
 
-    const getProjects = getProjectRequest(domain, privateToken);
+    const getProjects = getProjectRequest(domain, privateToken, searchParams);
     const { headers, body } = await getProjects(1, true);
     const totalPages = parseInt(headers['x-total-pages'], 10);
 
