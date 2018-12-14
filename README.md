@@ -7,7 +7,7 @@ Gatsby source plugin for fetching project metadata for projects in Gitlab.
 npm install @porch/gatsby-source-gitlab-projects
 ```
 
-Add the following to your `gatsby-config.js`
+Add the following to your `gatsby-config.js`:
 ```js
 module.exports = {
  plugins: [
@@ -21,7 +21,8 @@ module.exports = {
         includeReadme: true,
         searchParams: {
             // See https://docs.gitlab.com/ee/api/projects.html#list-all-projects
-        }
+        },
+        groupId: 1 // If provided, will fetch all projects for the given group, see https://docs.gitlab.com/ee/api/groups.html#list-a-groups-projects
       }
     }
 };
